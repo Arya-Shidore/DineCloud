@@ -20,6 +20,7 @@ def detectUser(user):
 
     
 def send_verification_email(request, user, mail_subject, email_template):
+    print("entered here!!", user.email)
     from_email = settings.DEFAULT_FROM_EMAIL
     current_site = get_current_site(request)
     message = render_to_string(email_template, {
@@ -32,6 +33,7 @@ def send_verification_email(request, user, mail_subject, email_template):
     mail = EmailMessage(mail_subject, message, from_email, to=[to_email])
     mail.content_subtype = "html"
     mail.send()
+    print("email sent!!")
 
 
 def send_notification(mail_subject, mail_template, context):
