@@ -21,5 +21,6 @@ from . import views
 
 urlpatterns = [
     path('registerUser/', views.registerUser, name="registerUser"),
-    path('registerRestaurent/', views.registerRestaurent, name="registerRestaurent"),
+    path('registerVendor/', views.registerVendor, name="registerVendor"),
+    
 ]
